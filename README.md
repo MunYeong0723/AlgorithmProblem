@@ -1,6 +1,6 @@
 # Baekjoon
 
-### Studing Kotlin
+### Studying Kotlin
 #### # 8979
 (https://www.acmicpc.net/problem/8979) <br>
 -> 처음에는 Map class를 만들어서 멤버 변수에 key, value를 두고 key에는 국가를 나타내는 정수를, value에는 해당 나라의 메달 개수를 배열로 담는 class를 만들었다. 그리고 main()에서 Map class를 담기 위한 ArrayList를 만들어서 N개 나라의 메달 개수를 담아놓았다.
