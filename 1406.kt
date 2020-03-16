@@ -8,16 +8,10 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val lk = LinkedList<Char>()
-    var cursor = 0
 
     var st = br.readLine()
     for(i in 0 until st.length) lk.add(st[i])
-    cursor = lk.size
-
-//    lk.removeAt(1)
-//    for(i in 0 until lk.size) println(lk[i])
-//    println("$cursor")
-//    println("${lk.size}")
+    var it = lk.listIterator(lk.size)
 
     val num = Integer.parseInt(br.readLine())
     // read command
@@ -26,16 +20,19 @@ fun main() {
         val cmd = st.split(" ")
         when(cmd[0]){
             "L" -> {
-                if(cursor > 0) cursor--
+                if(it.hasPrevious()) it.previous()
             }
             "D" -> {
-                if(cursor != lk.size) cursor++
+                if(it.hasNext()) it.next()
             }
             "B" -> {
-                if(cursor > 0) lk.removeAt(--cursor)
+                if(it.hasPrevious()) {
+                    it.previous()
+                    it.remove()
+                }
             }
             "P" -> {
-                lk.add(cursor++, cmd[1].first())
+                it.add(cmd[1].first())
             }
         }
     }
