@@ -40,3 +40,10 @@
 -> sort하는 것은 2751번 문제를 풀 때 사용한 merge sort 알고리즘으로 정렬하였다. 좌표이기 때문에 Pair class를 만들어서 x좌표와 y좌표를 가지고 있도록 구현하였다. <br>
 -> sorting을 할 때 크기 비교를 해야되는데 class를 크기 비교하게 하기 위해서 인터페이스 Comparable을 implements하고 compareTo를 override해서 x좌표가 크면, x좌표가 같다면 y좌표가 큰 Pair가 크도록 구현하였다.
 <br>
+
+### # 1406
+(https://www.acmicpc.net/problem/1406) <br>
+-> 커서를 옮기면서 중간의 글자를 추가하거나 지울 수 있기 때문에 add, remove 하는데 걸리는 시간이 O(1)인 linkedlist를 이용해서 구현하려고 하였다. 처음에 구현했을 때는 index를 이용해서 add(index, char), removeAt(index)를 이용해서 중간의 글자를 추가하거나 지웠기 때문에 O(1)이 걸리는 것이 아니라 index까지 찾아가서 add나 remove를 하기 때문에 O(n)의 시간이 걸린다. 그래서 시간 초과로 문제를 풀 수 없었다. <br>
+-> 이번에는 linkedlist의 listiterator를 이용해서 구현해보았다. (iterator도 있지만 iterator는 단방향으로만 갈 수 있기 때문에 양방향으로 이동할 수 있는 listiterator를 사용하였다.) iterator를 커서로 보고 명령을 수행하도록 구현하였지만 여전히 시간 초과가 떴다. 그래서 입출력의 시간을 최대한 줄이기 위해 Scanner 대신 BufferedReader로 입력을 받고, BufferedWriter로 출력을 했지만 그래도 시간 초과가 떴다. <br>
+-> 문제에 대해 찾아보다가 stack으로도 풀 수 있다는 힌트를 얻었다. stack을 2개 만들어서 커서의 왼쪽에 있는 글자와 오른쪽의 글자를 나눠서 각각의 stack에 담았다. 그러면 add, remove를 O(1)만에 할 수 있다. 이렇게 구현하여 문제를 맞출 수 있었다.
+<br>
