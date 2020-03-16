@@ -7,11 +7,11 @@ import java.util.*
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val lk = LinkedList<Char>()
+    var left = Stack<Char>()
+    var right = Stack<Char>()
 
     var st = br.readLine()
-    for(i in 0 until st.length) lk.add(st[i])
-    var it = lk.listIterator(lk.size)
+    for(i in 0 until st.length) left.add(st[i])
 
     val num = Integer.parseInt(br.readLine())
     // read command
@@ -20,24 +20,22 @@ fun main() {
         val cmd = st.split(" ")
         when(cmd[0]){
             "L" -> {
-                if(it.hasPrevious()) it.previous()
+                if(!left.isEmpty()) right.push(left.pop())
             }
             "D" -> {
-                if(it.hasNext()) it.next()
+                if(!right.isEmpty()) left.push(right.pop())
             }
             "B" -> {
-                if(it.hasPrevious()) {
-                    it.previous()
-                    it.remove()
-                }
+                if(!left.isEmpty()) left.pop()
             }
             "P" -> {
-                it.add(cmd[1].first())
+                left.push(cmd[1].first())
             }
         }
     }
 
-    for(i in 0 until lk.size) bw.write("${lk[i]}")
+    for(i in 0 until left.size) bw.write("${left[i]}")
+    for(i in right.size-1 downTo 0) bw.write("${right[i]}")
     bw.flush()
     bw.close()
 }
