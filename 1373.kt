@@ -5,31 +5,21 @@ import java.util.*
 fun main() {
     val sc = Scanner(System.`in`)
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    var bin = Stack<Char>()
-    var oct = Stack<Int>()
 
-    val binary = sc.nextLine()
-    for(i in 0 until binary.length) bin.push(binary[i])
+    var binary = sc.nextLine()
+    val len = binary.length
 
-    // calculate binary to octal
-    while(!bin.empty()){
-        var octal = 0
-        var mul = 1
-        if(bin.size >= 3){
-            for(i in 0..2){
-                if(bin.pop() == '1') octal += mul
-                mul *= 2
-            }
-        }
-        else {
-            for(i in 0 until bin.size){
-                if(bin.pop() == '1') octal += mul
-                mul *= 2
-            }
-        }
-        oct.push(octal)
+    if(len % 3 == 1){
+        binary = "00$binary"
+    }
+    else if(len % 3 == 2){
+        binary = "0$binary"
     }
 
-    while(!oct.empty()) bw.write("${oct.pop()}")
+    var i = 0
+    while(i < len){
+        bw.write("${(binary[i]-'0')*4 + (binary[i+1]-'0')*2 + (binary[i+2]-'0')*1}")
+        i += 3
+    }
     bw.flush()
 }
