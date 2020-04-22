@@ -92,3 +92,9 @@
 -> 처음에 Math class의 max()를 써서 최대값을 찾아냈는데 시간 초과가 나왔다. 따라서 max method를 만들어서 그 함수를 이용해 최대값을 찾도록 구현하였더니 시간 초과가 뜨지 않고 문제를 맞출 수 있었다.
 <br>
 
+### # 1260
+(https://www.acmicpc.net/problem/1260) <br>
+-> 이번 문제는 DFS와 BFS를 구현하는 문제이다. graph를 입력받을 때, 2차원 배열을 이용하여 양방향 edge를 저장하였다. <br>
+-> DFS는 stack을 이용하여 구현하였다. N+1 크기의 array를 만들어서 false로 초기화하여 방문을 하였는지 체크할 수 있도록 하였다. V에서 search를 시작해서 stack에서 pop하고 방문했다는 것을 체크하기 위해 array의 node에 해당하는 index를 true로 바꿔준다. 방문한 node에 인접한 node들을 (방문하지 않은 node라면) stack에 push한다. node의 번호가 작은 수부터 방문하기 위해 큰 수부터 push한다. stack이 empty할 때까지 반복한다. <br>
+-> BFS는 DFS와 비슷하게 구현하였지만 queue를 이용한 점에서 차이가 있다. DFS에서와 마찬가지로 N+1 크기의 array를 만들고 V에서 search를 시작해서 queue에 remove하고 array의 node에 해당하는 index를 true로 바꿔준다. 방문한 node에 인접한 node들을 (방문하지 않은 node라면) queue에 add한다. 이를 queue가 empty할 때까지 반복한다. 
+<br>
