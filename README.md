@@ -98,3 +98,9 @@
 -> DFS는 stack을 이용하여 구현하였다. N+1 크기의 array를 만들어서 false로 초기화하여 방문을 하였는지 체크할 수 있도록 하였다. V에서 search를 시작해서 stack에서 pop하고 방문했다는 것을 체크하기 위해 array의 node에 해당하는 index를 true로 바꿔준다. 방문한 node에 인접한 node들을 (방문하지 않은 node라면) stack에 push한다. node의 번호가 작은 수부터 방문하기 위해 큰 수부터 push한다. stack이 empty할 때까지 반복한다. <br>
 -> BFS는 DFS와 비슷하게 구현하였지만 queue를 이용한 점에서 차이가 있다. DFS에서와 마찬가지로 N+1 크기의 array를 만들고 V에서 search를 시작해서 queue에 remove하고 array의 node에 해당하는 index를 true로 바꿔준다. 방문한 node에 인접한 node들을 (방문하지 않은 node라면) queue에 add한다. 이를 queue가 empty할 때까지 반복한다. 
 <br>
+
+### # 1707
+(https://www.acmicpc.net/problem/1707) <br>
+-> 이분 그래프는 각 node들이 인접한 node와의 색깔이 다르면 이분 그래프라고 할 수 있다. dfs로 모든 node들을 search하면서 color(1 or 2)를 주고 인접한 node가 현재 node와 색이 같다면 이분 그래프가 아니므로 NO를 출력하였다. <br>
+-> dfs로 search할 때 node 중 1부터 시작하여 color를 칠했다. 하지만 계속 문제가 틀렸었다. 그 이유는 모든 node들이 이어져있지 않은 그래프도 존재하기 때문이었다. 이를 해결하기 위해 V까지의 node들을 보면서 방문하였는지 체크하는 코드를 추가하여 문제를 맞출 수 있었다.
+<br>
