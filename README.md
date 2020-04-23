@@ -104,3 +104,10 @@
 -> 이분 그래프는 각 node들이 인접한 node와의 색깔이 다르면 이분 그래프라고 할 수 있다. dfs로 모든 node들을 search하면서 color(1 or 2)를 주고 인접한 node가 현재 node와 색이 같다면 이분 그래프가 아니므로 NO를 출력하였다. <br>
 -> dfs로 search할 때 node 중 1부터 시작하여 color를 칠했다. 하지만 계속 문제가 틀렸었다. 그 이유는 모든 node들이 이어져있지 않은 그래프도 존재하기 때문이었다. 이를 해결하기 위해 V까지의 node들을 보면서 방문하였는지 체크하는 코드를 추가하여 문제를 맞출 수 있었다.
 <br>
+
+### # 9466
+(https://www.acmicpc.net/problem/9466) <br>
+-> graph에서 cycle을 찾고 cycle에 포함되는 node의 수가 팀에 포함되는 학생 수이다. dfs를 이용하여 graph의 cycle을 찾았다. <br>
+-> 전에는 stack을 이용하여 dfs를 구현하였지만 이번에는 재귀를 이용하여 dfs를 구현하였다. visit[]을 통해 방문한 node를 체크하고 done[]을 추가로 만들어서 팀에 포함된 학생들을 체크하였다.
+<br>
+
