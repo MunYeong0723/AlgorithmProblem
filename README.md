@@ -117,3 +117,16 @@
 -> 2차원 배열을 하나씩 보면서 1인 곳을 찾으면 bfs()를 실행한다. bfs()에서는 맨 처음 1을 찾은 곳부터 시작해서 위,아래,왼쪽,오른쪽에 1이 있다면 queue에 add하여 queue의 맨 앞을 remove할 때마다 count를 하나씩 더하여 집의 개수를 return하였다. <br>
 -> bfs()를 통해 얻은 집의 개수를 linkedlist에 add하여 linkedlist의 size가 단지의 개수를 알 수 있고, linklist를 sort하여 각 단지에 포함된 집의 개수를 오름차순으로 출력하여 문제를 맞출 수 있었다.
 <br>
+
+### # 7576 
+(https://www.acmicpc.net/problem/7576) <br>
+-> graph를 처음부터 끝까지 보면서 1인 곳을 queue에 add하고 -1로 사방이 막혀있는 0이 있다면 토마토가 다 익지 못하는 상태이므로 -1을 return한다. 만약 queue에 아무것도 add되지 않았다면 익은 토마토가 없기 때문에 토마토가 다 익지 못하는 상태이므로 -1을 return한다. 그렇지 않으면 bfs()를 실행한다. bfs()가 한 번 실행될 때마다 day가 하루씩 늘어난다.<br>
+-> bfs()는 인자로 받은 queue가 empty일 때까지 하나씩 remove하면서 remove된 곳 왼쪽,오른쪽,아래쪽,위쪽에 0이 있다면 1로 바꾸고 return할 queue에 add해준다. <br>
+-> queue가 empty할 때까지 (즉, 익은 토마토 주변에 안 익은 토마토가 없을 때까지) bfs()를 실행한다. 그리고 다시 graph를 처음부터 끝까지 보면서 0이 있다면 -1을 return하고 그렇지 않으면 day를 return한다.
+<br>
+
+### # 2178
+(https://www.acmicpc.net/problem/2178) <br>
+-> 이전 문제와 같은 bfs문제였다. 따라서 이전 bfs 문제들과 비슷한 방법으로 풀었더니 문제를 맞출 수 있었다. <br>
+-> 이전 문제들과 약간 다른 점은 Cell class를 만들어서 현재 위치의 (x,y)와 지금까지 몇 칸을 지나왔는지(move)를 멤버변수로 가지고 있도록 하였다. bfs로 (1,1)에서 시작하여 위,아래,오른쪽,왼쪽에 1이 있다면 현재 위치에서의 move+1를 하여 queue에 add하고 queue가 empty할 때까지 반복하였다. remove한 위치가 (n,m)이라면 현재의 move를 return하도록 구현하였다.
+<br>
