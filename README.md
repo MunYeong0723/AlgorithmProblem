@@ -130,3 +130,9 @@
 -> 이전 문제와 같은 bfs문제였다. 따라서 이전 bfs 문제들과 비슷한 방법으로 풀었더니 문제를 맞출 수 있었다. <br>
 -> 이전 문제들과 약간 다른 점은 Cell class를 만들어서 현재 위치의 (x,y)와 지금까지 몇 칸을 지나왔는지(move)를 멤버변수로 가지고 있도록 하였다. bfs로 (1,1)에서 시작하여 위,아래,오른쪽,왼쪽에 1이 있다면 현재 위치에서의 move+1를 하여 queue에 add하고 queue가 empty할 때까지 반복하였다. remove한 위치가 (n,m)이라면 현재의 move를 return하도록 구현하였다.
 <br>
+
+### # 11725
+(https://www.acmicpc.net/problem/11725) <br>
+-> 이번 문제는 각 node의 parent node를 찾는 문제이다. parent를 찾기 위해 dfs를 이용해서 문제를 풀었다. <br>
+-> dfs로 graph를 search하면서 parent 배열을 만들어서 neighbor node를 stack에 push할 때 현재 방문한 node가 neighbor node의 parent node라고 저장해준다. 
+<br>
