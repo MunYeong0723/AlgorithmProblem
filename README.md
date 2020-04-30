@@ -136,3 +136,10 @@
 -> 이번 문제는 각 node의 parent node를 찾는 문제이다. parent를 찾기 위해 dfs를 이용해서 문제를 풀었다. <br>
 -> dfs로 graph를 search하면서 parent 배열을 만들어서 neighbor node를 stack에 push할 때 현재 방문한 node가 neighbor node의 parent node라고 저장해준다. 
 <br>
+
+### # 1967
+(https://www.acmicpc.net/problem/1967) <br>
+-> 문제의 힌트로 bfs로 나와있어서 bfs 문제로 생각하고 풀이를 생각해보았지만 도저히 풀 수 없었다. 그래서 인터넷에서 풀이를 찾아봤는데 이번 문제는 bfs 문제가 아니라 dfs 문제라고 하였다. <br>
+-> dfs를 두 번 써서 root에서 (즉 1에서) 제일 먼 node를 먼저 찾고, 그 node로부터 제일 먼 node를 찾으면 그게 트리의 지름이 될 것이다. <br>
+-> dfs를 스택을 이용해서 짜려고 했는데 root로부터 거리 계산이 어려웠다. 하지만 재귀를 이용해서 dfs를 짠다면 현재 visit한 node에서 parent로 돌아갔을 때 parent까지 왔던 거리를 알기가 더 쉬웠다.
+<br>
