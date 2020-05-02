@@ -148,3 +148,8 @@
 -> 이번 문제는 binary search를 이용해서 푸는 문제였다. 입력받을 때 나무들 중 제일 긴 나무의 길이를 알아내고 0부터 max까지 max부터 1씩 줄이면서 자르고자 하는 나무의 길이(m)과 제일 가까운 h를 찾으면 시간이 오래걸리므로 binary search를 하여 h를 찾아낸다. <br>
 -> binary search를 하면서 m과 제일 가까운 h를 찾기 위해 min이라는 변수를 두어 나무들의 총 길이 합으로 초기화를 하고, 자른 나무의 길이와 m의 길이의 차가 제일 작은 h를 답으로 출력하였다.
 <br>
+
+### # 10815
+(https://www.acmicpc.net/problem/10815) <br>
+-> 이번 문제 역시 binary search를 이용해서 푸는 문제였다. 숫자 카드를 입력받을 때 ArrayList에 담아 binary serach를 위해 sort()를 해주었다. 그 다음, 숫자를 하나씩 입력받아 binary search를 하는 method를 만들어서 해당 수의 카드가 있다면 true를 return하여 1을 출력하고 그렇지 않으면 0을 출력하도록 구현하였다.
+<br>
