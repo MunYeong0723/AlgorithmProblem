@@ -153,3 +153,9 @@
 (https://www.acmicpc.net/problem/10815) <br>
 -> 이번 문제 역시 binary search를 이용해서 푸는 문제였다. 숫자 카드를 입력받을 때 ArrayList에 담아 binary serach를 위해 sort()를 해주었다. 그 다음, 숫자를 하나씩 입력받아 binary search를 하는 method를 만들어서 해당 수의 카드가 있다면 true를 return하여 1을 출력하고 그렇지 않으면 0을 출력하도록 구현하였다.
 <br>
+
+### # 10816
+(https://www.acmicpc.net/problem/10816) <br>
+-> 숫자 카드가 중복되어서 들어올 수 있고 해당 숫자의 카드가 몇 개 있는지 출력하는 문제이다. 따라서 입력을 받을 때 전에 입력받았던 숫자인지 체크하고 배열에 넣기 위해 HashMap을 이용하였다. key로 카드의 숫자를, value로 해당 카드의 개수를 가지고 있도록 하여 target을 찾아서 있는 카드라면 target에 해당하는 value를 출력하고 없으면 0을 출력하도록 하여 문제를 맞출 수 있었다. <br>
+-> 하지만 힌트를 보니 이번 문제는 binary search에 해당하는 문제였다. 그래서 binary search로 다시 구현해보았다. ArrayList에 숫자들을 입력받고 sort()하여 오름차순으로 정렬하였다. target을 입력받아 target이 시작되는 index와 target이 끝나는 index+1을 binary search를 이용하여 찾고 그 둘을 빼면 target의 개수가 나온다. 만약 없는 카드라면, 시작되는 index와 끝나는 index+1이 같은 숫자로 return되기 때문에 0으로 출력된다.
+<br>
