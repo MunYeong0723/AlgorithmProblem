@@ -1,7 +1,5 @@
-import java.util.HashMap;
 import java.util.Scanner;
 import java.io.FileInputStream;
-import java.util.Set;
 
 /*
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
@@ -19,22 +17,18 @@ class _1204
         for(int test_case = 1; test_case <= T; test_case++)
         {
             int num = sc.nextInt();
-            HashMap hm = new HashMap<Integer, Integer>();
+            int[] score = new int[101];
 
             for(int i = 0; i < 1000; i++){
-                int score = sc.nextInt();
-                if(hm.containsKey(score)) hm.put(score, ((int) hm.get(score))+1);
-                else hm.put(score, 1);
+                score[sc.nextInt()]++;
             }
 
-            Set keys = hm.keySet();
             int studentMAX = 0;
             int ans = 0;
-            for(Object i : keys){
-                int student = (int) hm.get(i);
-                if(studentMAX <= student){
-                    studentMAX = student;
-                    ans = (int) i;
+            for(int i = 0; i < 101; i++){
+                if(studentMAX <= score[i]){
+                    studentMAX = score[i];
+                    ans = i;
                 }
             }
             System.out.println("#" + test_case + " " + ans);
