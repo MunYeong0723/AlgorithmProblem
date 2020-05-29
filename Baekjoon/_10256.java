@@ -43,7 +43,7 @@ class Trie {
                 now = find(dna[j], now);
                 if(now == null) break;
             }
-            if(now != null) count++;
+            if(now != null) count++; // null이라면 지금 보고 있는 부분은 marker에 해당되지 않기 때문에 count하지 않음.
         }
         return count;
     }
