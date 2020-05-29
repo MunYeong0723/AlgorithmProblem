@@ -232,3 +232,9 @@
 -> 이렇게 구현하였더니 녹을 cheese의 개수를 내가 생각한 것보다 더 많이 세어서 문제를 풀지 못하였다. 문제는 조건을 잘못 이해한 것이었다. cheese 중간에 구멍이 있기 때문에 주변에 0이 있다고 모두 녹을 cheese인 것은 아니었다. <br>
 -> 이 조건을 만족시키기 위해 dfs를 한번 더 추가하여(: dfs_isAir() ), 항상 바깥쪽 공기인 (0,0) 칸과 연결된 칸을 찾아 visited라는 2차원 배열에서 -1로 표시하였다. 그리고 dfs를 한번 더 실행하여(: dfs_cheese() ) 녹을 cheese의 개수를 세어 return하였다.
 <br>
+
+### # 10256
+(https://www.acmicpc.net/problem/10256) <br>
+-> marker가 되는 모든 경우에서 해당되는 문자열이 있는지 빠르게 찾기 위해 문자열 검색을 빠르게 할 수 있는 trie 알고리즘을 이용하였다. Trie class를 만들어서 children으로 다음 node들을 가지고 있도록 하였다. 문자가 A,C,G,T 밖에 없기 때문에 각 0,1,2,3으로 index를 정하여 children 배열에서 문자에 해당하는 index에 할당되도록 하였다. <br>
+-> marker의 돌연변이가 될 수 있는 모든 경우를 찾아 Trie 안에 insert하였다. 그리고 search_DNA()로 DNA를 앞에서부터 marker의 길이만큼 보면서 해당 문자열이 marker가 되는 경우에 포함되는지 check하고, trie 안에 있다면 count를 +1해주어서 DNA 구조에 marker가 몇 번 출연하는지 return하였다.
+<br>
