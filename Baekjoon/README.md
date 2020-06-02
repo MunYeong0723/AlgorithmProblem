@@ -238,3 +238,10 @@
 -> marker가 되는 모든 경우에서 해당되는 문자열이 있는지 빠르게 찾기 위해 문자열 검색을 빠르게 할 수 있는 trie 알고리즘을 이용하였다. Trie class를 만들어서 children으로 다음 node들을 가지고 있도록 하였다. 문자가 A,C,G,T 밖에 없기 때문에 각 0,1,2,3으로 index를 정하여 children 배열에서 문자에 해당하는 index에 할당되도록 하였다. <br>
 -> marker의 돌연변이가 될 수 있는 모든 경우를 찾아 Trie 안에 insert하였다. 그리고 search_DNA()로 DNA를 앞에서부터 marker의 길이만큼 보면서 해당 문자열이 marker가 되는 경우에 포함되는지 check하고, trie 안에 있다면 count를 +1해주어서 DNA 구조에 marker가 몇 번 출연하는지 return하였다.
 <br>
+
+### # 18808
+(https://www.acmicpc.net/problem/18808) <br>
+-> 이번 문제는 sticker를 주어진 칸에 붙이는 문제이다. sticker를 입력받을 때 1인 칸(스티커에 해당하는 칸)의 위치를 linkedList에 add하고 noteBook의 (0,0)부터 sticker를 붙일 수 있는지 attach() method를 이용하여 체크하고 붙일 수 있다면 list의 size만큼을 답에 더하고 다음 sticker로 넘어갔다. 만약 sticker를 붙일 수 없다면 spin90() method를 이용하여 sticker를 90도 돌리고 다시 attach() method로 붙일 수 있는지 check하였다. <br>
+-> attach() : 재귀 함수로 구현하였고, noteBook의 범위 안에 들어가고 그 자리에 sticker가 붙어있지 않다면 다음 칸으로 넘어가서 다시 확인한다. 이렇게 모든 칸이 noteBook에 들어갈 수 있다면 noteBook의 위치를 1로 바꿔주고 true를 return하고, 그렇지 않다면 0으로 바꾸고 false로 return한다. <br>
+-> spin90() : sticker를 90도 돌리는 method이다. sticker의 row와 column을 바꾼 크기의 Array를(change) 새로 할당하고 90도 돌린 결과를 change에 넣고 sticker에 change를 copy하였다.
+<br>
