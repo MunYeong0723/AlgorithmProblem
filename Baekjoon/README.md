@@ -303,11 +303,12 @@
 <summary># 1723 <code>Binary Search</code> <br>(https://www.acmicpc.net/problem/1723)</summary>
 -> 중심각도가 같은 부채꼴 안에 들어가는 점의 최대 개수와 최소 개수의 차이 중 최솟값을 구하는 문제이다. 따라서 부채꼴을 만드는 방법은 여러 가지 있고 경우의 수를 줄이기 위해 입력받은 각도를 기준으로 부채꼴을 만들었다. <br>
 -> 기준이 되는 각도에서 0.001을 뺀 값을 시작으로 중심 각도를 더해서 부채꼴을 만들고, 그 안에 들어가는 점의 개수를 찾기 위해 binary search를 이용하였다.
+</details>
 <br>
 
 <details>
 	<summary># 1717 <code>union find</code> <br> (https://www.acmicpc.net/problem/1717)</summary>
 	-> union()을 구현할 때 find()로 현재 집합의 대표값을 찾고 이미 같은 집합이 아니라면 둘을 합쳐주었다. 이렇게 구현하였더니 시간 초과가 발생하였다. <br>
 	-> 시간 초과가 발생하는 이유는 그냥 합쳐주기만 했기 때문에 tree의 depth가 엄청 커질 수 있고 이렇게 되면 parent를 찾는데 O(n)의 시간이 걸리게 된다. 이를 해결하기 위해 두 개의 다른 tree의 depth를 비교해서 depth가 더 큰 tree의 대표값이 합친 tree의 대표값이 되도록 구현해주었다.
-	<br>
 </details>
+	<br>
