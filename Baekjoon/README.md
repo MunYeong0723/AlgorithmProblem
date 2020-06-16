@@ -312,3 +312,11 @@
 	-> 시간 초과가 발생하는 이유는 그냥 합쳐주기만 했기 때문에 tree의 depth가 엄청 커질 수 있고 이렇게 되면 parent를 찾는데 O(n)의 시간이 걸리게 된다. 이를 해결하기 위해 두 개의 다른 tree의 depth를 비교해서 depth가 더 큰 tree의 대표값이 합친 tree의 대표값이 되도록 구현해주었다.
 </details>
 <br>
+
+<details>
+	<summary># 3830 <code>union find</code> <br> (https://www.acmicpc.net/problem/3830)</summary>
+	-> 두 샘플의 무게를 비교할 때 두 샘플이 연결되어있는지 확인하고 무게 차이를 edge에 weight로 주어서 graph를 search하는 방식으로 생각하였다. 그래서 처음에는 dfs로 구현하였다. 하지만 시간 초과가 나서 다른 알고리즘으로 문제를 풀었어야 했다. <br>
+	-> 이번에는 union-find로 문제를 풀어보았다. findParent()를 통해 parent를 찾고, 재귀로 찾으면서 root를 tree array에 담았다. 그리고 weight array를 만들어서 root까지 가는 weight를 더해서 담는다. 그리고 union()에서는 같은 집합이 아닐 때 union을 진행한다. b의 parent를 대표값으로 하여 a와 b를 union하고, weight array에 입력받은 두 샘플의 차이에서 a의 weight와 b의 weight 차이를 빼서 a의 parent weight에 담는다.
+	<br>
+</details>
+<br>
