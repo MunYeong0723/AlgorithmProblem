@@ -320,3 +320,19 @@
 	<br>
 </details>
 <br>
+
+<details>
+	<summary># 1644 <code>에라스토테네스의 체</code> <br> (https://www.acmicpc.net/problem/1644)</summary>
+	[문제 풀이 링크](https://github.com/MunYeong0723/AlgorithmProblem/blob/master/Baekjoon/_1644.java) <br>
+	-> 우선 입력값보다 작거나 같은 소수를 찾고 배열에 넣는다. 소수가 들어있는 배열을 0번째부터 보면서 현재의 index보다 큰 수들을 연속으로 더했을 때 입력값이 나오면 경우의 수에 해당하는 변수에 +1을 해주고, 입력값보다 커지면 바로 다음 index로 넘어가도록 구현하였다. <br>
+	-> 처음에는 소수를 찾을 때 2부터 입력값의 루트값까지 보면서 나누어떨어지는지 하나씩 체크해보았다. 이렇게 구현했을 때도 통과했지만 Math.sqrt()를 써야해서 Math class를 쓰지 않고 소수를 찾기 위해 에라스토테네스의 체 방법으로 소수를 찾았다. 이 방법으로 구현했을 때의 시간이 처음에 제출했을 때의 시간보다 훨씬 덜 걸렸다.
+</details>
+<br>
+
+<details>
+	<summary># 14939 <br> (https://www.acmicpc.net/problem/14939)</summary>
+	[문제 풀이 링크](https://github.com/MunYeong0723/AlgorithmProblem/blob/master/Baekjoon/_14939.java) <br>
+	-> 우선, 최소로 스위치를 누르려면 모든 칸의 스위치를 최대 한번만 눌러야 한다. 그리고 첫번째 row에서의 전등이 정해지면 다음 row부터는 눌러야할 스위치가 정해지게 된다. 바로 윗칸의 전등이 켜져있을 때 해당 칸의 스위치를 누르면 되기 때문이다. 이런 식으로 첫번째 row에서 스위치를 누르는 모든 경우를 해보고, 전등이 모두 꺼지는 경우 중 가장 적게 누르는 횟수를 출력하도록 한다. <br>
+	-> 첫번째 row의 스위치를 누르는 모든 경우를 해보기 위해 bit연산을 이용하였다. 스위치를 누르는 경우의 수는 10칸이기 때문에 2^10가지가 있고, bit 연산을 이용하여 모든 경우를 하나씩 해본다. 예를 들어, 현재 5(101)번째 case라면, 0번째 column과 2번째 column의 스위치를 flip해준다.
+</details>
+<br>
