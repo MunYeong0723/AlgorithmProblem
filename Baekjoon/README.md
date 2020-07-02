@@ -378,3 +378,12 @@
 	(https://github.com/MunYeong0723/AlgorithmProblem/blob/master/Baekjoon/_14939.java)
 </details>
 <br>
+
+<details>
+	<summary># 17090 <br> (https://www.acmicpc.net/problem/17090)</summary>
+	-> 처음에는 dfs를 이용해서 해당 칸의 글자에 맞게 이동해서 탈출할 수 있는지 확인하고 이 행동을 모든 칸에서 반복하도록 구현하였다. 하지만 시간 초과가 떠서 다른 방법을 고민해야했다. <br>
+	-> 따라서 union-find로 구현을 하였다. 해당 칸의 글자가 U라면 윗칸이랑 union하고 R이라면 오른쪽 칸과 union을 하는 식으로 이동하는 칸을 union하였다. 만약 union해야하는 칸이 maze 범위를 넘어가는 칸이라면 탈출할 수 있는 칸이므로 n*m과 union하여 탈출할 수 있는 칸이라고 구분하였다. <br>
+	-> 모든 칸에 대해 union을 마친 후 해당 index의 parent가 n*m이라면 탈출할 수 있는 칸이라는 것을 알 수 있다. <br>
+	(https://github.com/MunYeong0723/AlgorithmProblem/blob/master/Baekjoon/_17090.java)
+</details>
+<br>
